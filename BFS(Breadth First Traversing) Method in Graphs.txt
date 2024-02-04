@@ -1,0 +1,178 @@
+BFS(Breadth First Traversing) Method in Graphs:
+
+def addNode(v):
+    if v in graph:
+        print(v,"is already available")
+    else:
+        graph[v]=[]
+def show():
+    for x in graph:
+        print(x,":",graph[x])
+def addEdge(node1,node2):
+    if node1 not in graph:
+        print("node1 is not available")
+    elif node2 not in graph:
+        print("node2 is not available")
+    else:
+        graph[node1].append(node2)
+def bfs(visited,graph,node):
+    visited.append(node)
+    queue.append(node)
+    while queue:
+        m=queue.pop(0)
+        print(m,end=" ")
+        for v in graph[m]:
+            if v not in visited:
+                visited.append(v)
+                queue.append(v)
+
+graph={}
+visited=[]
+queue=[]
+while True:
+    print()
+    print("1.Add Node\n2.Add Edge\n3.Show\n4.BFS\n5.Exit")
+    ch=int(input("Choice: "))
+    if ch==1:
+        x=input("Node: ")
+        addNode(x)
+    elif ch==2:
+        node1=input("Node1: ")
+        node2=input("Node2: ")
+        addEdge(node1,node2)
+    elif ch==3:
+        show()
+    elif ch==4:
+        node=input("Node:")
+        bfs(visited,graph,'5')
+        print()
+    elif ch==5:
+        exit
+    else:
+        print("invalid choice")
+
+Output:
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 1
+Node: 2
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 1
+Node: 3
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 1
+Node: 4
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 1
+Node: 5
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 1
+Node: 7
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 1
+Node: 8
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 2
+Node1: 5
+Node2: 3
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 2
+Node1: 3
+Node2: 2
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 2
+Node1: 3
+Node2: 4
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 2
+Node1: 5
+Node2: 7
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 2
+Node1: 7
+Node2: 8
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 2
+Node1: 4
+Node2: 8
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 3
+2 : []
+3 : ['2', '4']
+4 : ['8']
+5 : ['3', '7']
+7 : ['8']
+8 : []
+
+1.Add Node
+2.Add Edge
+3.Show
+4.BFS
+5.Exit
+Choice: 4
+Node:5
+5 3 7 2 4 8 
